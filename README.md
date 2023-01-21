@@ -3,19 +3,18 @@
 This is an updated version of a boombox script I previously released, that lets the player have a useable boombox item in their inventory and use it to play songs/sounds. This utilizes ox_lib and a better 3d sound resource.
 
 ## Usage
-Add song mp3/ogg files to the chHyperSound resource, and add them to the js5m-boombox config. In its current state, the menu will only display the tapes/songs that you have available in your inventory, via GetPlayerData().items in the client.
+Add song mp3/ogg files to the chHyperSound resource, and add them to the js5m-boombox config. In its current state, the menu will only display the tapes/songs that you have available in your inventory, via GetPlayerData().items in the client. The person that put down the boombox is the only person that can interact with the boombox.
 
 I have included a pdn template file I've used to create tape/song inventory images, using real covers, and an example of one of them.
 
 ## Items
 You will need a useable item of a boombox to be added to your items.
+
 **boombox**
 
-See the config for information about the tape items.
-
-The person that put down the boombox is the only person that can interact with the boombox
-
 ## Make Your Own Tapes
+
+See the config for information about the tape items.
 
 ## Dependencies
 - qb-core
