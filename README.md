@@ -19,6 +19,7 @@ See the config for information about the tape items.
 ## Dependencies
 - qb-core
 - [ox_lib](https://github.com/overextended/ox_lib)
+- [ox_target](https://github.com/overextended/ox_target)
 - [chHyperSound](https://github.com/JoeSzymkowiczFiveM/chHyperSound) - Using my own fork of HyperSound as the original has been archived. Huge credit to charleshacks for creating this. It's a far-superior version of 3d sound than my original attempt.
 
 ## Preview
