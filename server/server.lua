@@ -47,20 +47,3 @@ RegisterServerEvent('js5m-boombox:server:stopBoombox', function(data)
     local uniqueId = "boombox_"..tostring(object)
     TriggerEvent('chHyperSound:stop', uniqueId)
 end)
-
-RegisterServerEvent('js5m-boombox:server:filterSound', function(data)
-    local object = data.netId
-    local uniqueId = "boombox_"..tostring(object)
-    TriggerEvent('chHyperSound:filterSound', uniqueId, 'muffled')
-end)
-
-RegisterServerEvent('js5m-boombox:server:removeFilter', function(data)
-    local object = data.netId
-    local uniqueId = "boombox_"..tostring(object)
-    TriggerEvent('chHyperSound:removeFilter', uniqueId)
-end)
-
-RegisterServerEvent('js5m-boombox:server:updateCoords', function(object, coords)
-    local uniqueId = "boombox_"..tostring(object)
-    exports['xyz-3dsound']:UpdateCoords(uniqueId, coords)
-end)
