@@ -97,6 +97,9 @@ RegisterNetEvent("js5m-boombox:client:putAwayBoombox", function(data)
         DeleteEntity(object)
         boombox = nil
         TriggerServerEvent("js5m-boombox:server:stopBoombox", {netId = netId})
+
+        exports.ox_target:removeEntity(netId, { 'boombox:standard' })
+
     end)
 end)
 
@@ -123,7 +126,7 @@ RegisterNetEvent("js5m-boombox:client:placeBoombox", function(item, player, sour
             {
                 name = 'boombox:standard',
                 event = "js5m-boombox:client:boomBoxMenu2",
-                icon = "fas fa-question",
+                icon = "fa-solid fa-radio",
                 label = "Boombox",
                 netId = netId,
             },
