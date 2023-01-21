@@ -8,7 +8,7 @@ AddEventHandler('onResourceStop', function(resourceName)
         NetworkRequestControlOfEntity(boombox)
         while not NetworkHasControlOfEntity(boombox) do
             NetworkRequestControlOfEntity(boombox)
-            Wait(10)
+            Wait(1)
         end
 
         DeleteEntity(boombox)
@@ -22,10 +22,10 @@ local function HoldBoombox(net)
 	CreateThread(function()
         local object = NetworkGetEntityFromNetworkId(net)
 
-        NetworkRequestControlOfEntity(object)
-        while not NetworkHasControlOfEntity(object) do
-            NetworkRequestControlOfEntity(object)
-            Wait(10)
+        NetworkRequestControlOfNetworkId(net)
+        while not NetworkHasControlOfNetworkId(net) do
+            NetworkRequestControlOfNetworkId(net)
+            Wait(1)
         end
         
         local alreadyEnteredZone = false
@@ -63,10 +63,10 @@ RegisterNetEvent('js5m-boombox:client:attach', function(data)
     local netId = data.netId
     local object = NetworkGetEntityFromNetworkId(netId)
 
-    NetworkRequestControlOfEntity(object)
-    while not NetworkHasControlOfEntity(object) do
-        NetworkRequestControlOfEntity(object)
-        Wait(10)
+    NetworkRequestControlOfNetworkId(netId)
+    while not NetworkHasControlOfNetworkId(netId) do
+        NetworkRequestControlOfNetworkId(netId)
+        Wait(1)
     end
 
     lib.requestAnimDict("pickup_object", 100)
@@ -140,7 +140,6 @@ end)
 RegisterNetEvent("js5m-boombox:client:boomBoxMenu2", function(data)
     local netId = data.netId
     local isSoundIdPlaying = exports['chHyperSound']:IsSoundIdPlaying("boombox_"..tostring(netId))
-    --print('isSoundIdPlaying', isSoundIdPlaying)
     local registeredMenu = {
         id = 'js5m-boombox_menu',
         title = 'Boombox Menu',
@@ -170,7 +169,7 @@ RegisterNetEvent("js5m-boombox:client:boomBoxMenu2", function(data)
             args = {netId = netId},
         }
         options[#options+1] = {
-            title = 'Increase Volume',
+            title = 'Decrease Volume',
             description = "Decrease boombox volume",
             serverEvent = 'js5m-boombox:server:decreaseVolume',
             args = {netId = netId},
